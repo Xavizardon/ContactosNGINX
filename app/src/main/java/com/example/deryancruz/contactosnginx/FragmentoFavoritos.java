@@ -7,17 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentFav extends Fragment {
+public class FragmentoFavoritos extends Fragment {
 
-    View v;
+    View VistaAuxiliar;
 
-    public FragmentFav() {
+    public FragmentoFavoritos() {
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fav_fragment,container,false);
-        return v;
+        VistaAuxiliar = inflater.inflate(R.layout.favoritos_fragmento,container,false);
+        return VistaAuxiliar;
     }
 }

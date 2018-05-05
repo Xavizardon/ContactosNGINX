@@ -8,18 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class FragmentCall extends Fragment {
+public class FragmentoLlamadas extends Fragment {
 
-    View v;
+    View VistaAuxiliar;
 
-    public FragmentCall() {
+    public FragmentoLlamadas() {
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.call_fragment,container,false);
-        return v;
+        VistaAuxiliar = inflater.inflate(R.layout.llamadas_fragmento,container,false);
+        return VistaAuxiliar;
     }
 
 }

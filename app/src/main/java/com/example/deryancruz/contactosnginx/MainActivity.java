@@ -10,31 +10,31 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
 
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private ViewPagerAdapter adapter;
+    private TabLayout EspacioParaMenu;
+    private ViewPager EspacioParaFragmentos;
+    private ViewPagerAdapter AdaptadorParaFragmentos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
-        viewPager = (ViewPager) findViewById(R.id.viewpager_id);
-        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        EspacioParaMenu = (TabLayout) findViewById(R.id.tablayout_contact_nginx);
+        EspacioParaFragmentos = (ViewPager) findViewById(R.id.viewpager_nginx);
+        AdaptadorParaFragmentos = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.AddFragment(new FragmentCall(),"Calls");
-        adapter.AddFragment(new FragmentContact(),"Contact");
-        adapter.AddFragment(new FragmentFav(),"Favorite");
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+        AdaptadorParaFragmentos.AddFragment(new FragmentoContactos(),"Contactos");
+        AdaptadorParaFragmentos.AddFragment(new FragmentoLlamadas(),"Llamadas");
+        AdaptadorParaFragmentos.AddFragment(new FragmentoFavoritos(),"Favoritos");
+        EspacioParaFragmentos.setAdapter(AdaptadorParaFragmentos);
+        EspacioParaMenu.setupWithViewPager(EspacioParaFragmentos);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_local_phone_black_24dp);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_people_black_24dp);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_star_black_24dp);
+        EspacioParaMenu.getTabAt(0).setIcon(R.drawable.ic_people_black_24dp);
+        EspacioParaMenu.getTabAt(1).setIcon(R.drawable.ic_local_phone_black_24dp);
+        EspacioParaMenu.getTabAt(2).setIcon(R.drawable.ic_star_black_24dp);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setElevation(0);
+        ActionBar BarraDeAccion = getSupportActionBar();
+        BarraDeAccion.setElevation(0);
     }
 
 
