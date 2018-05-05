@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -54,7 +55,7 @@ public class FragmentContact extends Fragment{
                 sortOrder);
 
         while(c.moveToNext()){
-            lsContact.add(new Contact(c.getString(1), c.getString(2)));
+            lsContact.add(new Contact(c.getString(1), c.getString(2),"00067115@uca.edu.sv",R.drawable.perfil2));
         }
         c.close();
     }
@@ -64,39 +65,11 @@ public class FragmentContact extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.contact_fragment, container, false);
-        myrecycleview = (RecyclerView) v.findViewById(R.id.contact_recyclerview);
+        myrecycleview = (RecyclerView) v.findViewById(R.id.recycler1);
 
         RecyclerViewAdapterContact recyclerViewAdapterContact = new RecyclerViewAdapterContact(getContext(),lsContact);
-        myrecycleview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        myrecycleview.setLayoutManager(new GridLayoutManager(getActivity(),3));
         myrecycleview.setAdapter(recyclerViewAdapterContact);
-
-        EditText editText = (EditText) v.findViewById(R.id.edittext);
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                List<Contact> filteredList = new ArrayList<>();
-                for(Contact item : lsContact){
-                    if(item.getName().toLowerCase().contains(s.toString().toLowerCase())){
-                        filteredList.add(item);
-                    }
-                }
-                RecyclerViewAdapterContact recyclerViewAdapterContact = new RecyclerViewAdapterContact(getContext(),filteredList);
-                myrecycleview.setLayoutManager(new LinearLayoutManager(getActivity()));
-                myrecycleview.setAdapter(recyclerViewAdapterContact);
-            }
-        });
-
-        //RecyclerViewAdapterContact recyclerViewAdapterContact = new RecyclerViewAdapterContact(getContext(), lsContact);
 
         return v;
     }

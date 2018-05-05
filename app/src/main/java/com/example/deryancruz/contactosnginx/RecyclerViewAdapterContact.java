@@ -2,7 +2,6 @@ package com.example.deryancruz.contactosnginx;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -37,23 +36,7 @@ public class RecyclerViewAdapterContact extends RecyclerView.Adapter<RecyclerVie
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.txt_nom.setText(data.get(position).getNombre());
-        holder.img.setImageResource(data.get(position).getFoto());
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intenta = new Intent(context1,Contacto_activity.class);
-
-                //Transfiriendo datos a Contacto_activity
-                intenta.putExtra("Nombre",data.get(position).getNombre());
-                intenta.putExtra("Telefono",data.get(position).getTelefono());
-                intenta.putExtra("Correo",data.get(position).getCorreo());
-                intenta.putExtra("Foto",data.get(position).getFoto());
-
-                context1.startActivity(intenta);
-
-            }
-        });
+        //holder.img.setImageResource(data.get(position).getFoto());
 
     }
 
