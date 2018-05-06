@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/viewpager_nginx">
+
         </android.support.v4.view.ViewPager>
 
     </android.support.design.widget.CoordinatorLayout>

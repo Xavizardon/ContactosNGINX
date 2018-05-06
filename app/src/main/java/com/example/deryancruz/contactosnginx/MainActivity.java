@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity {
         AdaptadorParaFragmentos = new ViewPagerAdapter(getSupportFragmentManager());
 
         AdaptadorParaFragmentos.AddFragment(new FragmentoContactos(),"Contactos");
-        AdaptadorParaFragmentos.AddFragment(new FragmentoLlamadas(),"Llamadas");
+        //AdaptadorParaFragmentos.AddFragment(new FragmentoLlamadas(),"Llamadas");
         AdaptadorParaFragmentos.AddFragment(new FragmentoFavoritos(),"Favoritos");
         EspacioParaFragmentos.setAdapter(AdaptadorParaFragmentos);
         EspacioParaMenu.setupWithViewPager(EspacioParaFragmentos);
 
         EspacioParaMenu.getTabAt(0).setIcon(R.drawable.ic_people_black_24dp);
-        EspacioParaMenu.getTabAt(1).setIcon(R.drawable.ic_local_phone_black_24dp);
-        EspacioParaMenu.getTabAt(2).setIcon(R.drawable.ic_star_black_24dp);
+        //EspacioParaMenu.getTabAt(1).setIcon(R.drawable.ic_local_phone_black_24dp);
+        EspacioParaMenu.getTabAt(1).setIcon(R.drawable.ic_star_black_24dp);
 
         ActionBar BarraDeAccion = getSupportActionBar();
         BarraDeAccion.setElevation(0);
