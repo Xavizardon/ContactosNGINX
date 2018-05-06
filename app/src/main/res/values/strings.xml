@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Contactos NGINX</string>
+    <string name="title_activity_agregar_contacto">AgregarContacto</string>
 </resources>
