@@ -36,8 +36,8 @@ public class RecyclerViewAdaptadorContactos extends RecyclerView.Adapter<Recycle
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.TextViewNombre.setText(DatosContactos.get(position).getNombreContacto());
-        //holder.img.setImageResource(data.get(position).getFoto());
-
+        //holder.FotoContacto.setImageResource(DatosContactos.get(position).getFotoContacto());
+        holder.FotoContacto.setImageResource(R.drawable.ic_person_black_24dp);
     }
 
     @Override

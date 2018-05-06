@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         //AdaptadorParaFragmentos.AddFragment(new FragmentoLlamadas(),"Llamadas");
         AdaptadorParaFragmentos.AddFragment(new FragmentoFavoritos(),"Favoritos");
         EspacioParaFragmentos.setAdapter(AdaptadorParaFragmentos);
-        
+
         EspacioParaMenu.setupWithViewPager(EspacioParaFragmentos);
 
         EspacioParaMenu.getTabAt(0).setIcon(R.drawable.ic_people_black_24dp);
