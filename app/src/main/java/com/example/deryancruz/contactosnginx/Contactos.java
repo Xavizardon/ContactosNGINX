@@ -9,13 +9,15 @@ public class Contactos {
     private String TelefonoContacto;
     private String CorreContacto;
     private int fotoContacto;
+    private boolean favoritos;
 
     //Creando Constructor
-    public Contactos(String nombre, String telefono, String correo, int foto) {
+    public Contactos(String nombre, String telefono, String correo, int foto, boolean favoritos) {
         this.NombreContacto = nombre;
         this.TelefonoContacto = telefono;
         this.CorreContacto = correo;
         this.fotoContacto = foto;
+        this.favoritos = favoritos;
     }
 
     public Contactos() {
@@ -38,7 +40,9 @@ public class Contactos {
         fotoContacto = foto;
     }
 
-
+    public void setFavoritos(boolean favoritos) {
+        this.favoritos = favoritos;
+    }
 
     //Creando Getters
     public String getNombreContacto() {
@@ -55,5 +59,9 @@ public class Contactos {
 
     public int getFotoContacto() {
         return fotoContacto;
+    }
+
+    public boolean isFavoritos() {
+        return favoritos;
     }
 }

@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class FragmentoContactos extends Fragment{
 
     View VistaAuxiliar;
     private RecyclerView RecyclerViewContactos;
-    private List<Contactos> ListaDeContactos;
+    static List<Contactos> ListaDeContactos;
 
     public FragmentoContactos(){
     }
@@ -28,6 +29,9 @@ public class FragmentoContactos extends Fragment{
         LeyendoContactos();
     }
 
+    public List<Contactos> getListaDeContactos() {
+        return ListaDeContactos;
+    }
 
     public void LeyendoContactos(){
 
@@ -50,7 +54,7 @@ public class FragmentoContactos extends Fragment{
                 ReglaDeOrdenamiento);
 
         while(LeeContactos.moveToNext()){
-            ListaDeContactos.add(new Contactos(LeeContactos.getString(1), LeeContactos.getString(2),"00067115@uca.edu.sv",R.drawable.perfil2));
+            ListaDeContactos.add(new Contactos(LeeContactos.getString(1), LeeContactos.getString(2),"00125116@uca.edu.sv", R.drawable.perfil2, false));
         }
         LeeContactos.close();
     }
@@ -68,5 +72,6 @@ public class FragmentoContactos extends Fragment{
 
         return VistaAuxiliar;
     }
+
 
 }

@@ -48,11 +48,12 @@
                 android:textAlignment="center"
                 android:textSize="14sp" />
 
-            <CheckBox
+            <ImageView
                 android:id="@+id/boton_favorito"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/ic_star_border_black_24dp"
                 android:layout_gravity="center"/>
 
         </LinearLayout>
